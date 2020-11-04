@@ -160,7 +160,7 @@ def _build_vocab(filename):
     count_pairs = sorted(counter.items(), key=lambda x: (-x[1], x[0]))
     words, _ = list(zip(*count_pairs))
     word_to_id = dict(zip(words, range(len(words))))
-    id_to_word = dict((i, v) for v, i in word_to_id.items())
+    id_to_word = {i: v for v, i in word_to_id.items()}
     return word_to_id, id_to_word
 
 

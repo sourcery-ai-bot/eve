@@ -194,7 +194,7 @@ class Babi(Dataset):
             (set(story + q + [answer]) for story, q, answer in train)))
 
         self.vocab_size = len(vocab) + 1
-        word_idx = dict((c, i+1) for i, c in enumerate(vocab))
+        word_idx = {c: i+1 for i, c in enumerate(vocab)}
         self.story_maxlen = max(map(len, (x for x, _, _ in train)))
         self.query_maxlen = max(map(len, (x for _, x, _ in train)))
 
